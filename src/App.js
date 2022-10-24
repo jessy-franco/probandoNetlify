@@ -1,22 +1,25 @@
-import logo from './logo.svg';
+/* import logo from './logo.svg'; */
+import dino from './components/ImgHeader/dinosaurio.png';
+import logo from './components/ImgHeader/Vivero-SucuRex.png';
+import macetita from './components/ImgHeader/planta.png';
 import './App.css';
+import NavBar from'./components/NavBar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={dinosaurio.png}  className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section className="zona-1">
+        <header className="encabezado">
+          <div className="divColor">
+            <img src={dino} alt="logo" className='dinoSucu'/>
+              <img src={logo} alt="viveroLogo" width="250px" height="auto" className='logImg' />
+                <img src={macetita} alt="plantalo" className='dinoSucu'/>
+          </div>
+        </header>
+      </section>
+      <NavBar/>
     </div>
-  );
+          );
 }
 
-export default App;
+          export default App;
