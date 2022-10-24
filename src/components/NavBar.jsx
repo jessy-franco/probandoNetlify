@@ -1,5 +1,5 @@
 
-import Botones from "./Button/buttons"
+import Botones from "./Button/Buttons"
 import CartWidget from "./CartWidget/CartWidget";
 
 function NavBar (){

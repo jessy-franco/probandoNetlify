@@ -4,6 +4,8 @@ import logo from './components/ImgHeader/Vivero-SucuRex.png';
 import macetita from './components/ImgHeader/planta.png';
 import './App.css';
 import NavBar from'./components/NavBar'
+import ItemsProdList from "./components/ItemsProdList/ItemProdList"
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         </header>
       </section>
       <NavBar/>
+      <ItemsProdList/>
     </div>
           );
 }
