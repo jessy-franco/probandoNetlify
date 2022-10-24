@@ -1,10 +1,11 @@
-/* import logo from './logo.svg'; */
+
 import dino from './components/ImgHeader/dinosaurio.png';
 import logo from './components/ImgHeader/Vivero-SucuRex.png';
 import macetita from './components/ImgHeader/planta.png';
 import './App.css';
-import NavBar from'./components/NavBar'
-import ItemsProdList from "./components/ItemsProdList/ItemProdList"
+import CollapsibleExample from'./components/NavBar';
+import ItemsProdList from "./components/ItemsProdList/ItemProdList";
+import  'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           </div>
         </header>
       </section>
-      <NavBar/>
+      <CollapsibleExample/>
       <ItemsProdList/>
     </div>
           );

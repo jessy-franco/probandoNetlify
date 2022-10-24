@@ -1,0 +1,9 @@
+
+.flex{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    margin: 0 2%;
+    padding: 0px 18% !important;
+}
