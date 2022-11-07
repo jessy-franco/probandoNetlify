@@ -1,19 +1,26 @@
 import React from "react";
-import Botones2 from "../Button/Buttons"
+import { Link } from "react-router-dom";
+import Button from "../Button/Buttons"
 import "./itemStyle.css"
 
-function Item(props) {
+function Item(product) {
+
+    let urlDescripcion = `/descripcion/${product.id}`;
+
     return (
-        <div className="card">
+        <div className="newCard">
             <div className="card-img">
-                <img src={props.imgurl} alt="Product img" />
+                <img src={product.img} alt="Product img" />
             </div>
-            <div className="card-detail">
-                <h2>{props.title}</h2>
-                <p>{props.detail}</p>
-                <h4 className="priceTag">$ {props.price}</h4>
+            <div className="cardDetail">
+                <h2>{product.name}</h2>
+                <p>{product.descripcion}</p>
+                <h4 className="priceTag">$ {product.price}</h4>
+                <Link to={urlDescripcion}>
+            <Button>Ver más!</Button>
+            </Link>
             </div>
-            <Botones2>Ver más!</Botones2>
+            
         </div>
     );
 }

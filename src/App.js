@@ -4,9 +4,9 @@ import logo from './components/ImgHeader/Vivero-SucuRex.png';
 import macetita from './components/ImgHeader/planta.png';
 import './App.css';
 import CollapsibleExample from'./components/NavBar';
-import ItemsProdList from "./components/ItemsProdList/ItemProdList";
+import ItemsProdList from "./components/ItemsProdList/itemListContainer";
 import  'bootstrap/dist/css/bootstrap.min.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -20,8 +20,21 @@ function App() {
           </div>
         </header>
       </section>
+      <BrowserRouter>
+      <Routes>
+          <Route
+            path="/"
+            element={<itemListContainer greeting="Bienvenidos" />}
+          />
+          <Route
+            path="/category/:categoryid"
+            element={<itemListContainer greeting="Bienvenidos" />}
+          />
+          <Route path="/descripcion/:id" element={<itemDetailContainer />} />
+        </Routes>
       <CollapsibleExample/>
       <ItemsProdList/>
+      </BrowserRouter>
     </div>
           );
 }

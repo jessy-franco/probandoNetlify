@@ -6,4 +6,14 @@
     align-content: space-between;
     margin: 0 2%;
     padding: 0px 18% !important;
+} 
+
+nav a{
+    text-decoration: unset;
+    color: black;
+    padding: 2%;
+    font-size: 1.2rem;
+}
+.row{
+    display: flex
 }

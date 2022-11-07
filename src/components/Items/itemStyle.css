@@ -10,7 +10,7 @@
     object-fit: contain;
 }
 
-.card {
+.newCard {
     margin: 10px 15px;
     min-height: 600px;
     width: 280px;
@@ -21,4 +21,7 @@
     overflow: hidden;
     transition: all 0.20s ease-in;
     cursor: pointer;
+}
+.cardDetail{
+    margin-left: 25%;
 }
