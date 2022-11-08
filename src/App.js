@@ -4,7 +4,8 @@ import logo from './components/ImgHeader/Vivero-SucuRex.png';
 import macetita from './components/ImgHeader/planta.png';
 import './App.css';
 import CollapsibleExample from'./components/NavBar';
-import ItemsProdList from "./components/ItemsProdList/itemListContainer";
+import ItemListContainer from "./components/ItemsProdList/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import  'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -21,19 +22,22 @@ function App() {
         </header>
       </section>
       <BrowserRouter>
+      <CollapsibleExample/>
       <Routes>
-          <Route
+      <Route
             path="/"
-            element={<itemListContainer greeting="Bienvenidos" />}
+            element={<ItemListContainer greeting="Bienvenidos" />}
+          />
+          <Route
+            path="/subcategory/:subcategoryid"
+            element={<ItemListContainer greeting="Bienvenidos" />}
           />
           <Route
             path="/category/:categoryid"
-            element={<itemListContainer greeting="Bienvenidos" />}
+            element={<ItemListContainer greeting="Bienvenidos" />}
           />
-          <Route path="/descripcion/:id" element={<itemDetailContainer />} />
+        <Route path="/detalle/:id" element={<ItemDetailContainer />} /> 
         </Routes>
-      <CollapsibleExample/>
-      <ItemsProdList/>
       </BrowserRouter>
     </div>
           );

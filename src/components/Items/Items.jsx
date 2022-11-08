@@ -5,7 +5,7 @@ import "./itemStyle.css"
 
 function Item(product) {
 
-    let urlDescripcion = `/descripcion/${product.id}`;
+    let urlDetail = `/detalle/${product.id}`;
 
     return (
         <div className="newCard">
@@ -16,7 +16,7 @@ function Item(product) {
                 <h2>{product.name}</h2>
                 <p>{product.descripcion}</p>
                 <h4 className="priceTag">$ {product.price}</h4>
-                <Link to={urlDescripcion}>
+                <Link to={urlDetail}>
             <Button>Ver más!</Button>
             </Link>
             </div>

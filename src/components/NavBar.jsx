@@ -18,7 +18,7 @@ function CollapsibleExample() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="flex">
                     <Nav className="me-auto flex ">
-                        <Link to="/category/Ofertas">
+                        <Link to="/category/ofertas">
                             ¡¡¡Ofertas!!!
                         </Link>
                         <Link to="/category/Plantas de interior" className="row">
@@ -35,6 +35,9 @@ function CollapsibleExample() {
                         </Link>
                         <Link to="/category/Decoracion">
                             Decoracion
+                        </Link>
+                        <Link to="/subcategory/todos">
+                            Todos
                         </Link>
                         <Nav.Link href="#cartWidget"><CartWidget /></Nav.Link>
                     </Nav>
