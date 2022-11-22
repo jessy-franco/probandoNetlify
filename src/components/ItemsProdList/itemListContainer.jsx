@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ItemsProd from "./ItemProdList"
 import ArrayProd, {
-    ArrayProdByCategory, ArrayProdBySubCategory,
-} from "../../mockService/MockServiceList";
+    ArrayProdByCategory
+} from "../../mockService/mockServiceList";
 
 import { useParams } from "react-router-dom";
 
@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 function ItemListContainer() {
     const [productsList, setProductsList] = useState([]);
     const { categoryid } = useParams();
-    const { subcategoryid } = useParams();
 
     useEffect(() => {
         if (categoryid) {
@@ -18,12 +17,12 @@ function ItemListContainer() {
                 setProductsList(arrayItems);
             });
         } else {
-            ArrayProd(ArrayProdBySubCategory(subcategoryid)).then((arrayItems) => {
+            ArrayProd().then((arrayItems) => {
                 setProductsList(arrayItems);
                 console.log("no filtraste")
             });
         }
-    }, [categoryid, subcategoryid] );
+    }, [categoryid] );
     return <ItemsProd productsList={productsList} />;
 
 }

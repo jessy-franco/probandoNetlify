@@ -852,15 +852,15 @@ export default function ArrayProd() {
     })
 }
 
-export function arrayProdSeleccion(idParams) {
+export function getSingleItem(idParams) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let itemSelecccion = arrayItems.find((item) => item.id === Number(idParams));
+            let itemRequested = arrayItems.find((item) => item.id ===(idParams));
 
-            if (itemSelecccion) {
-                resolve(itemSelecccion);
+            if (itemRequested) {
+                resolve(itemRequested);
             } else {
-                reject(new Error("El item es indefinido."));
+                reject(new Error("El item no existe."));
             }
         }, 500);
     });
@@ -872,17 +872,6 @@ export function ArrayProdByCategory(categoryId) {
         setTimeout(() => {
             let itemSelecccion = arrayItems.filter((item) =>
                 item.category === categoryId
-            )
-            resolve(itemSelecccion);
-        }, 500);
-    });
-}
-
-export function ArrayProdBySubCategory(subcategoryId) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let itemSelecccion = arrayItems.filter((item) =>
-                item.subcategory === subcategoryId
             )
             resolve(itemSelecccion);
         }, 500);

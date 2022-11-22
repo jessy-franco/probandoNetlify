@@ -1,6 +1,6 @@
 
 import CartWidget from "./CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,7 +14,6 @@ function CollapsibleExample() {
                 <Link to="/">
                     <h3>SucuRex</h3>
                 </Link>
-                { /* <Navbar.Brand href="#home">SucuRex</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="flex">
                     <Nav className="me-auto flex ">
@@ -36,7 +35,7 @@ function CollapsibleExample() {
                         <Link to="/category/Decoracion">
                             Decoracion
                         </Link>
-                        <Link to="/subcategory/todos">
+                        <Link to="/">
                             Todos
                         </Link>
                         <Nav.Link href="#cartWidget"><CartWidget /></Nav.Link>

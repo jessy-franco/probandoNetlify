@@ -1,14 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+import React, { useState} from "react";
+import {Link} from "react-router-dom"
 import Button from "../Button/Buttons"
 import "./itemStyle.css"
 
-function Item(product) {
+function ItemsCard(product) {
+
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    function handleFavorite() {
+        setIsFavorite(!isFavorite);
+    }
+
+    let classButtonFavorite =
+        isFavorite === true ? "card-favicon favorite" : "card-favicon";
 
     let urlDetail = `/detalle/${product.id}`;
 
     return (
         <div className="newCard">
+            <button onClick={handleFavorite} className={classButtonFavorite}>
+                ♥
+            </button>
             <div className="card-img">
                 <img src={product.img} alt="Product img" />
             </div>
@@ -16,14 +29,14 @@ function Item(product) {
                 <h2>{product.name}</h2>
                 <p>{product.descripcion}</p>
                 <h4 className="priceTag">$ {product.price}</h4>
-                <Link to={urlDetail}>
-            <Button>Ver más!</Button>
-            </Link>
+                <Link to= {urlDetail} >
+                    <Button>Ver más!</Button>
+                </Link>
             </div>
-            
+
         </div>
     );
 }
 
-export default Item;
+export default ItemsCard;
 
