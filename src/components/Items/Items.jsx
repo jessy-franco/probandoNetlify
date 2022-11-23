@@ -18,7 +18,7 @@ function ItemsCard(product) {
     let urlDetail = `/detalle/${product.id}`;
 
     return (
-        <div className="newCard">
+        <div className="Card">
             <button onClick={handleFavorite} className={classButtonFavorite}>
                 ♥
             </button>

@@ -7,7 +7,8 @@ function ItemsProd(props) {
         <div>
             <GridProductos>
                 {props.productsList.map((product) => (
-                    <ItemsCard key={product.id} name={product.name} img={product.img} descripcion={product.descripcion} price={product.price} />
+                    
+                    <ItemsCard key={product.id} {...product}/> 
                     
                     ))}
             </GridProductos>

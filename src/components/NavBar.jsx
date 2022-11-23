@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import "../components/NavBar.css"
 
 
@@ -17,15 +18,19 @@ function CollapsibleExample() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="flex">
                     <Nav className="me-auto flex ">
-                        <Link to="/category/ofertas">
+                        <Link to="/category/Ofertas">
                             ¡¡¡Ofertas!!!
                         </Link>
-                        <Link to="/category/Plantas de interior" className="row">
-                            Plantas de interior
-                        </Link>
-                        <Link to="/category/Plantas de exterior" className="row">
-                            Plantas de exterior
-                        </Link>
+                        <NavDropdown title="Plantas" id="basic-nav-dropdown" className="textStyle">
+                            <NavDropdown.Item >
+                                <Link to="/category/Plantas de interior">Plantas de interior</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item >
+                                <Link to="/category/Plantas de exterior">
+                                    Plantas de exterior
+                                </Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
                         <Link to="/category/Macetas">
                             Macetas
                         </Link>

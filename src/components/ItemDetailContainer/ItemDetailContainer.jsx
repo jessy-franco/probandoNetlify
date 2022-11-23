@@ -1,38 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { getSingleItem } from "../../mockService/mockServiceList";
 import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
 
-    const {idProducto} = useParams();
+    let {idProducto} = useParams();
 
     useEffect(() => {
-        getSingleItem(idProducto)
+        if(idProducto){
+            getSingleItem(idProducto)
             .then((arrayItems) => {
                 setProduct(arrayItems);
             })
             .catch((error) => alert(error));
+        }
+        else{
+            
+            console.log("sigue sin funcionar")
+        }
     }, [idProducto]);
 
-    return (
-        <div className="Card">
-            <div className="card-img">
-                <img src={product.img} alt="Product img" />
-            </div>
-            <div className="card-detail">
-                <h2>{product.name}</h2>
-                <p>{product.descripcion}</p>
-                <p>{product.info}</p>
-                <h4 className="priceTag">$ {product.price}</h4>
-
-            </div>
-        </div>
-
-
-    );
+    return <ItemDetail product={product} />;
 
 }
 
 
-export default ItemDetailContainer1;
+export default ItemDetailContainer;
