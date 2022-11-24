@@ -785,7 +785,7 @@ export function getSingleItem(idParams) {
             if (itemRequested) {
                 resolve(itemRequested);
             } else {
-                reject(new Error("El item no existe."));
+                reject(new Error(<div className="newCard" style={{display:"none!important"}}> </div>));
             }
         }, 500);
     });
