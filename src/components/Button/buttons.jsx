@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import "./Button.css";
 
 function Button(props) {
 
     const [colorState] = useState({
-        backgroundColor: props.color,
-        borderColor: "red",
+        backgroundColor: props.bGColor,
+        color: props.color,
+        border: props.borderColor,
     });
 
     return (

@@ -30,7 +30,7 @@ function ItemsCard(product) {
                 <p>{product.descripcion}</p>
                 <h4 className="priceTag">$ {product.price}</h4>
                 <Link to= {urlDetail} >
-                    <Button>Ver más!</Button>
+                    <Button bGColor= "#dce9d8">Ver más!</Button>
                 </Link>
             </div>
 

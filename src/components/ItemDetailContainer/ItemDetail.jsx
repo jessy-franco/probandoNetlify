@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Button from "../Button/Buttons";
 import "./itemDetail.css"
 
 
@@ -13,10 +15,10 @@ function ItemDetail({product}) {
 
     function onAddToCart(count) {
         swal({
-            title: `Agregaste ${count} unidades al carrito`,
-            text: "Desea terminar su compra?",
+            title: `Agregaste ${count} unidad/es  de ${product.name} al carrito`,
+            text: "Siga viendo nuestros productos!!!",
             icon: "success",
-            confirmButtonText: "Ir al carrito",
+            button: "Ir al carrito",
         }).then((result) => {
             if (result.isConfirmed) {
                 navigate("/cart")
@@ -40,15 +42,19 @@ function ItemDetail({product}) {
             </div>
             {!isInCart ? (
                 <ItemCount
-                    text="Agregar al carritoP"
+                    text="Agregar al carrito :D"
                     onAddToCart={onAddToCart}
                     stock={product.stock}
                 />
             ) : (
                 <div>
-                    <button>Ir al Carrito</button>
-                    <button>Volver al catálogo</button>
-                    <button>Quitar del carrito</button>
+                    <Link to="/cart">
+                    <Button  bGColor= "#dce9d8">Ir al Carrito</Button>
+                    </Link>
+                    <Link to="/">
+                    <Button  bGColor= "#dce9d8">Volver a productos</Button>
+                    </Link>
+                    <Button  bGColor= "#dce9d8">Quitar del carrito</Button>
                 </div>
             )} 
         </div>
