@@ -3,7 +3,6 @@ import ItemsProd from "./ItemProdList"
 import ArrayProd, {
     ArrayProdByCategory
 } from "../../mockService/mockServiceList";
-
 import { useParams } from "react-router-dom";
 
 
@@ -23,9 +22,10 @@ function ItemListContainer() {
             });
         }
     }, [categoryid] );
-    return <ItemsProd productsList={productsList} />;
-
+    return <ItemsProd productsList={productsList}  /> ;
+    
 }
+
 
 
 export default ItemListContainer;

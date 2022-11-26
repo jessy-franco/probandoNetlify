@@ -26,19 +26,21 @@ function ItemDetailContainer() {
                         title: 'Oops...',
                         text: ' El producto no existe',
                         confirmButtonText:' <a href="/"}}>Desea volver a home? </a>',
-                        confirmButtonColor: '#ced4da',
+                        confirmButtonColor: '#94B49F',
                         width: 600,
                         padding: '3em',
                         color: '#606870',
                         background: '#fff',
-                        backdrop: `grey url(https://media.tenor.com/E6bTNFTSsWIAAAAj/john-travolta.gif)left center no-repeat`
+                        backdrop: `grey`,
+                        allowOutsideClick: false,
+                        allowEscapeKey: false,
+                        allowEnterKey: false,
 
                     })
 
-            /* alert(error) */);
+            );
         }
         else {
-
             console.log("sigue sin funcionar")
         }
     }, [idProducto]);

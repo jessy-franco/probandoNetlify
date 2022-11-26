@@ -1,7 +1,10 @@
 
 /* aproximacion css */
 /* Encabezado */
-
+body{
+  position: relative;
+  min-height: 100vh;
+}
 body .zona-1 {
   width: 100%;
   height: auto;
@@ -26,6 +29,7 @@ body .zona-1 {
   width: 120px;
   height: 120px;
 }
+
 /* /* NAVBAR */
 /* .flex{
   display: flex;
@@ -33,3 +37,12 @@ body .zona-1 {
   align-items: center;
   align-content: space-between;
 }  */
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap{
+  flex: 1;
+}

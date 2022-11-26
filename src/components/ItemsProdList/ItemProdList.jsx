@@ -4,7 +4,7 @@ import GridProductos from "../GridGalery/GridGalery"
 
 function ItemsProd(props) {
     return (
-        <div>
+        <section className="containerProducts">
             <GridProductos>
                 {props.productsList.map((product) => (
                     
@@ -12,7 +12,7 @@ function ItemsProd(props) {
                     
                     ))}
             </GridProductos>
-        </div>
+        </section>
     );
 }
 
