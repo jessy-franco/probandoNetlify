@@ -4,10 +4,10 @@ import "./Button.css";
 function Button(props) {
 
     const [colorState] = useState({
-        backgroundColor: props.bGColor,
-        color: props.color,
-        border: props.borderColor,
+        backgroundColor: props.bGColor || "#dcd8c6",
+        color: props.color || "green",
     });
+    
 
     return (
         <button onClick={props.onClick} style={colorState} className="newBtn">

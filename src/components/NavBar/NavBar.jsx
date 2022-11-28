@@ -43,7 +43,7 @@ function CollapsibleExample() {
                         <Link to="/">
                             Todos
                         </Link>
-                        <Nav.Link href="#cartWidget"><CartWidget /></Nav.Link>
+                        <Link to ="/cart"><CartWidget /></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

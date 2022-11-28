@@ -25,7 +25,7 @@ function ItemCount({ stock, onAddToCart, text }) {
                 </Button>
             </div>
             <div className="itemcount_btns">
-                <Button onClick={() => onAddToCart(count)} bGColor= "#dce9d8" >{text}</Button>
+                <Button onClick={() => onAddToCart(count)} bGColor= "#dcd8c6" >{text}</Button>
             </div>
         </div>
     );

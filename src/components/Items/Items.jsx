@@ -28,9 +28,12 @@ function ItemsCard(product) {
             <div className="cardDetail">
                 <h2>{product.name}</h2>
                 <p>{product.descripcion}</p>
-                <h4 className="priceTag">$ {product.price}</h4>
+                {
+                    product.discount? <h4 className="discount">{product.discount}% de descuento!</h4> : <></>
+                }
+                <h4 style ={{color : product.discount? "green" : "inherit"}}className="priceTag">$ {product.price}</h4>
                 <Link to= {urlDetail} >
-                    <Button bGColor= "#dce9d8">Ver más!</Button>
+                    <Button color="rgba(42, 101, 42, 0.762)">Ver más!</Button>
                 </Link>
             </div>
 

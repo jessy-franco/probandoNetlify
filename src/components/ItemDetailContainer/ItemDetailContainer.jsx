@@ -3,11 +3,12 @@ import { getSingleItem } from "../../mockService/mockServiceList";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import ItemDetail from "./ItemDetail";
+import Loader from "../Loader/Loader"
 
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
-
+    const [isLoading, setIsLoading] = useState(true);
     let { idProducto } = useParams();
 
     useEffect(() => {
@@ -15,6 +16,7 @@ function ItemDetailContainer() {
             getSingleItem(idProducto)
                 .then((arrayItems) => {
                     setProduct(arrayItems);
+                    setIsLoading(false);
                 })
                 .catch(() =>
                     Swal.fire({
@@ -25,7 +27,7 @@ function ItemDetailContainer() {
                         icon: 'error',
                         title: 'Oops...',
                         text: ' El producto no existe',
-                        confirmButtonText:' <a href="/"}}>Desea volver a home? </a>',
+                        confirmButtonText: ' <a href="/"}}>Desea volver a home? </a>',
                         confirmButtonColor: '#94B49F',
                         width: 600,
                         padding: '3em',
@@ -37,15 +39,25 @@ function ItemDetailContainer() {
                         allowEnterKey: false,
 
                     })
+                        .finally(() =>
+                            setIsLoading(false)
+                        )
 
-            );
+
+                );
         }
         else {
             console.log("sigue sin funcionar")
         }
     }, [idProducto]);
 
-    return <ItemDetail product={product} />;
+    //vamos a usar retorno anticipado(early return)
+    //declaramos un if antes del retorno con la condicion por true
+
+    if(isLoading) return <Loader/>;
+
+    return <ItemDetail product={product} />
+        
 
 }
 

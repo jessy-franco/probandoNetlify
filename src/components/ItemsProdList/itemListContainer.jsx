@@ -3,6 +3,7 @@ import ItemsProd from "./ItemProdList"
 import ArrayProd, {
     ArrayProdByCategory
 } from "../../mockService/mockServiceList";
+
 import { useParams } from "react-router-dom";
 
 
@@ -14,7 +15,8 @@ function ItemListContainer() {
         if (categoryid) {
             ArrayProdByCategory(categoryid).then((arrayItems) => {
                 setProductsList(arrayItems);
-            });
+            })
+            
         } else {
             ArrayProd().then((arrayItems) => {
                 setProductsList(arrayItems);

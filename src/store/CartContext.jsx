@@ -1,4 +1,5 @@
-import { createContext } from "react"
+
+import { useState, createContext } from "react"
 
 
 
@@ -8,18 +9,81 @@ const cartContext = createContext();
 // Los children son todos los componentes que le pasamos por app.js...osea los routes
 // estos componentes se interrelacionan con el provider// 
 // creamos un value para que los componenetes que usen contect
-export function CartContextProvider(props){
+export function CartContextProvider(props) {
+    const [cart, setCart] = useState([])
 
-const value= {
-    itemsInCart: 8, 
-};
-console.log(value)
+    function addToCart(itemData) {
+
+        console.log(itemData)
+        let itemFound = cart.find(itemsInCart => itemsInCart.id === itemData.id);
+
+        if (itemFound) {
+            let newCart = cart.map(itemsInCart => {
+                if (itemsInCart.id === itemData.id) {
+                    itemsInCart.count += itemData.count;
+                    return itemsInCart;
+                }
+                else {
+                    return itemsInCart;
+                }
+            })
+            setCart(newCart)
+            
+        }
+        else {
+            const newCart = [...cart];
+            newCart.push(itemData);
+            setCart(newCart);
+        } 
+        
+        /* else{
+            const newCart = [...cart];
+            setCart((newCart)=>{
+                newCart.push(itemData);
+                return newCart;
+            })
+        } */
+
+    }
+
+    function totalItemsInCart() {
+        let total = 0;
+        cart.forEach(itemsInCart => {
+            total = total + itemsInCart.count
+        });
+        return total;
+    }
+
+    function removeItem(itemId){
+        let itemRemove = cart.filter((itemsInCart)=>itemsInCart.id === itemId);
+            if (itemRemove === -1) {
+                console.error("id no encontrado");
+                return;
+        };
+        const newCart = [...cart];
+        newCart.splice(itemRemove, 1);
+        setCart(newCart);
+        
+    }
+
+    function clear(){
+        setCart([]);
+    }
+
+    const value = {
+        cart,
+        addToCart,
+        totalItemsInCart,
+        removeItem,
+        clear,
+    };
+    
     //Le pasamos una value para que los componentes puedan usar el context
 
-    return(
+    return (
         <cartContext.Provider value={value}>
-        {props.children}
-        </cartContext.Provider> 
+            {props.children}
+        </cartContext.Provider>
     )
 }
 

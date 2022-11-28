@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import cartContext from '../../store/CartContext';
 import swal from 'sweetalert';
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from "../Button/Buttons";
 import "./itemDetail.css"
@@ -11,20 +11,23 @@ import "./itemDetail.css"
 function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false);
 
-    const navigate = useNavigate();
+
+    const {addToCart} = useContext(cartContext);
 
     function onAddToCart(count) {
+        
         swal({
             title: `Agregaste ${count} unidad/es  de ${product.name} al carrito`,
             text: "Siga viendo nuestros productos!!!",
             icon: "success",
-            button: "Ir al carrito",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                navigate("/cart")
-            }
+            button: "Ok"
         });
+        const itemForCart = {
+            ...product,
+            count,
 
+        };
+        addToCart(itemForCart);
         setIsInCart(true);
     } 
     return (
@@ -37,6 +40,10 @@ function ItemDetail({product}) {
                 <h2>{product.name} </h2>
                 <p className="subTitle">{product.descripcion}</p>
                 <p style={{textAlign: "center", fontSize: "1.1rem"}}>{product.info}</p>
+                {/* podemos usar ternario, o operador logico and && cuando el cambio es pequeño....si el cambio es mas grande early return(if retornando antes)*/}
+                {
+                    product.discount && <h4 className="discount">{product.discount}% de descuento!</h4> 
+                }
                 <h4 className="priceTag" style={{textAlign: "center", fontSize: "2.5rem"}}>$ {product.price}</h4>
 
             </div>
@@ -47,14 +54,14 @@ function ItemDetail({product}) {
                     stock={product.stock}
                 />
             ) : (
-                <div>
+                <div style={{display:"flex", flexDirection: "row", padding:"10% 0"}}>
                     <Link to="/cart">
-                    <Button  bGColor= "#dce9d8">Ir al Carrito</Button>
+                    <Button style={{maxWidth: "100px"}} >Ir al Carrito</Button>
                     </Link>
                     <Link to="/">
-                    <Button  bGColor= "#dce9d8">Volver a productos</Button>
+                    <Button style={{maxWidth: "100px"}} >Volver a productos</Button>
                     </Link>
-                    <Button  bGColor= "#dce9d8">Quitar del carrito</Button>
+                    <Button style={{maxWidth: "100px"}} >Quitar del carrito</Button>
                 </div>
             )} 
         </div>
