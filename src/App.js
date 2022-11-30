@@ -13,7 +13,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from './store/CartContext';
 import CartView from './components/CartView/CartView';
 
-
 function App() {
   return (
     <div>
@@ -44,6 +43,7 @@ function App() {
                   />
                   <Route path="/detalle/:idProducto" element={<ItemDetailContainer />} />
                   <Route path="/cart" element ={<CartView />}/>
+                  <Route path="/checkout/orderId" element ={<h1>Gracias por su compra</h1>}/>
                   <Route path="*" element={<div><h1 style={{ textAlign: "center" }}>Error 404: La ruta no existe</h1><img src={error} alt="error404" style={{ marginLeft: "30%", paddingBottom: "2%" }} /></div>} />
                 </Routes>
               </section>
@@ -52,6 +52,7 @@ function App() {
               </section>
             </BrowserRouter>
           </CartContextProvider>
+          
         </div>
       </div>
     </div >

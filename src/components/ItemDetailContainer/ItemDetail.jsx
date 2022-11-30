@@ -12,9 +12,13 @@ function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false);
 
     console.log(product)
-    const {addToCart} = useContext(cartContext);
+    const {cart, addToCart} = useContext(cartContext);
 
-    function onAddToCart(count) {
+    let itemInCart = cart.find(item => product.id === item.id)
+    let stock = product.stock;
+    if(itemInCart) stock -= itemInCart.count;
+
+    function onAddToCart(count) { 
         
         swal({
             title: `Agregaste ${count} unidad/es  de ${product.name} al carrito`,
@@ -51,7 +55,7 @@ function ItemDetail({product}) {
                 <ItemCount
                     text="Agregar al carrito :D"
                     onAddToCart={onAddToCart}
-                    stock={product.stock}
+                    stock={stock}
                 />
             ) : (
                 <div style={{display:"flex", flexDirection: "row", padding:"10% 0"}}>

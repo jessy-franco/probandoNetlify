@@ -3,12 +3,16 @@ import cartContext from "../../store/CartContext";
 import Button from "../Button/Buttons";
 import dinoError from "../ImgHeader/dinoError.png"
 import { Link } from "react-router-dom";
+import { createBuyOrderFirestoreWithStock } from "../../firebase/firebase";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 
 /* 1-conectarlo al context---importando el context y el useContext */
 /* 2-mostrar el listado de items del array guardado en el context */
 
 function CartView() {
     const { cart, removeItem, totalPriceInCart, clear } = useContext(cartContext);
+    const navigation = useNavigate(); 
 
     if (cart.length === 0) {
         return <section>
@@ -18,6 +22,34 @@ function CartView() {
             <Button>Volver a productos</Button>
             </Link>
         </section>
+        
+    }
+
+    
+
+    function createBuyOrder(){
+        const buyData = {
+            buyer: {
+                name: "comision Coder",
+                phone: "12345",
+                email: "sucuRex@gmail.com"
+
+            },
+            items: cart,
+            total: totalPriceInCart,
+            date: new Date(),
+        }
+        createBuyOrderFirestoreWithStock(buyData).then(orderId =>{
+            console.log(orderId);
+                clear();
+                navigation(`/checkout/${orderId}`);
+                swal({
+                    title: `GRACIAS POR SU COMPRA :)`,
+                    text: `Su orden de compra es ${orderId}`,
+                    icon: "success",
+                    button: "Ok"
+                });
+        })
         
     }
 
@@ -38,6 +70,7 @@ function CartView() {
             }
             <Button onClick={() => clear()}>Vaciar Carrito</Button>
             <div><h5>El total de su compra es: ${totalPriceInCart()}</h5></div>
+            <Button onClick={createBuyOrder}>Finalizar compra!</Button>
         </section>
     )
 };

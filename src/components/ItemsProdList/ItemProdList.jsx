@@ -6,20 +6,20 @@ import Loader from "../Loader/Loader"
 function ItemsProd(props) {
     
     let emptyArray = props.productsList?.length === 0;
-    console.log(emptyArray)
+    
 
     return (
         <section className="containerProducts">
 
-            {emptyArray ? (
-                <Loader />)
-                : (
+            {emptyArray ? 
+                <Loader />
+                : 
                     <GridProductos>
                         {props.productsList.map((item) => (
                             <ItemsCard key={item.id} {...item} />
                         ))}
                     </GridProductos>
-                )}
+                }
 
         </section>
 
