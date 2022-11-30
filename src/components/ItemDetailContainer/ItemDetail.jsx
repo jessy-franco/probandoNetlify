@@ -11,7 +11,7 @@ import "./itemDetail.css"
 function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false);
 
-
+    console.log(product)
     const {addToCart} = useContext(cartContext);
 
     function onAddToCart(count) {

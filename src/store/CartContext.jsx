@@ -1,14 +1,15 @@
 
 import { useState, createContext } from "react"
 
-
-
-const cartContext = createContext();
 //context = Almacenamiento
 //Provider (proveedor, componente contenedor de componentes para que accedan al context)
 // Los children son todos los componentes que le pasamos por app.js...osea los routes
 // estos componentes se interrelacionan con el provider// 
 // creamos un value para que los componenetes que usen contect
+
+
+const cartContext = createContext();
+
 export function CartContextProvider(props) {
     const [cart, setCart] = useState([])
 
@@ -35,15 +36,6 @@ export function CartContextProvider(props) {
             newCart.push(itemData);
             setCart(newCart);
         } 
-        
-        /* else{
-            const newCart = [...cart];
-            setCart((newCart)=>{
-                newCart.push(itemData);
-                return newCart;
-            })
-        } */
-
     }
 
     function totalItemsInCart() {
@@ -66,6 +58,14 @@ export function CartContextProvider(props) {
         
     }
 
+    function totalPriceInCart(){
+        let totalPrice = 0;
+        cart.forEach(itemsInCart => {
+            totalPrice  = totalPrice  + (itemsInCart.count * itemsInCart.price)
+        });
+        return totalPrice ;
+    }
+    
     function clear(){
         setCart([]);
     }
@@ -74,6 +74,7 @@ export function CartContextProvider(props) {
         cart,
         addToCart,
         totalItemsInCart,
+        totalPriceInCart,
         removeItem,
         clear,
     };

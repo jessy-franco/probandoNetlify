@@ -22,13 +22,11 @@ function CollapsibleExample() {
                             ¡¡¡Ofertas!!!
                         </Link>
                         <NavDropdown title="Plantas" id="basic-nav-dropdown" className="textStyle">
-                            <NavDropdown.Item >
-                                <Link to="/category/Plantas de interior">Plantas de interior</Link>
+                            <NavDropdown.Item as={Link} to={"/category/Plantas de interior"} >
+                                Plantas de interior
                             </NavDropdown.Item>
-                            <NavDropdown.Item >
-                                <Link to="/category/Plantas de exterior">
+                            <NavDropdown.Item as={Link} to={"/category/Plantas de exterior"}>
                                     Plantas de exterior
-                                </Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Link to="/category/Macetas">
@@ -43,7 +41,7 @@ function CollapsibleExample() {
                         <Link to="/">
                             Todos
                         </Link>
-                        <Link to ="/cart"><CartWidget /></Link>
+                        <Link to ="/cart" style={{hover:"color:green"}}><CartWidget /></Link> 
                     </Nav>
                 </Navbar.Collapse>
             </Container>

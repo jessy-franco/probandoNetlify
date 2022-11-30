@@ -4,20 +4,23 @@ import GridProductos from "../GridGalery/GridGalery"
 import Loader from "../Loader/Loader"
 
 function ItemsProd(props) {
-
-    let emptyArray = props.productsList.length === 0;
+    
+    let emptyArray = props.productsList?.length === 0;
+    console.log(emptyArray)
 
     return (
         <section className="containerProducts">
-            {emptyArray ? 
-                <Loader/>
-                :
-            <GridProductos>
-                    {props.productsList.map((product) => (
-                        <ItemsCard key={product.id} {...product} />
-                    ))}
-            </GridProductos>
-            }
+
+            {emptyArray ? (
+                <Loader />)
+                : (
+                    <GridProductos>
+                        {props.productsList.map((item) => (
+                            <ItemsCard key={item.id} {...item} />
+                        ))}
+                    </GridProductos>
+                )}
+
         </section>
 
     );

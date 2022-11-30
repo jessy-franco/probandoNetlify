@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -8,12 +8,14 @@ import cartContext from '../../store/CartContext';
 
 function CartWidget() {
     const { totalItemsInCart } = useContext(cartContext);
-    return(
+    return (
+
         <IconButton aria-label="cart">
-        <Badge badgeContent={totalItemsInCart ()} color="success">
-            <ShoppingCartIcon/>
-        </Badge>
+                <Badge badgeContent={totalItemsInCart()} color="success">
+                    <ShoppingCartIcon />
+                </Badge>
         </IconButton>
+
     );
 }
 

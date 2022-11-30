@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getSingleItem } from "../../mockService/mockServiceList";
+import { getSingleItem } from "../../firebase/firebase";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import ItemDetail from "./ItemDetail";

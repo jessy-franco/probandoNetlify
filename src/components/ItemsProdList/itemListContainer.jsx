@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemsProd from "./ItemProdList"
-import ArrayProd, {
-    ArrayProdByCategory
-} from "../../mockService/mockServiceList";
+import { ArrayProdByCategory} from "../../firebase/firebase";
+import { ArrayProd } from "../../firebase/firebase";
 
 import { useParams } from "react-router-dom";
 
@@ -20,7 +19,6 @@ function ItemListContainer() {
         } else {
             ArrayProd().then((arrayItems) => {
                 setProductsList(arrayItems);
-                console.log("no filtraste")
             });
         }
     }, [categoryid] );
