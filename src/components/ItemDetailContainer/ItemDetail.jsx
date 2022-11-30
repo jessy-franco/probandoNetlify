@@ -12,9 +12,9 @@ function ItemDetail({product}) {
     const [isInCart, setIsInCart] = useState(false);
 
     console.log(product)
-    const {cart, addToCart} = useContext(cartContext);
+    const { cart,  addToCart} = useContext(cartContext);
 
-    let itemInCart = cart.find(item => product.id === item.id)
+    let itemInCart = cart.find((item) => product.id === item.id)
     let stock = product.stock;
     if(itemInCart) stock -= itemInCart.count;
 

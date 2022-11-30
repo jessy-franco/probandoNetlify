@@ -46,13 +46,13 @@ export async function ArrayProd() {
         // 1) conectar a la coleccion de prod de firebase con collection
 
         const collectionProducts = collection(dataBase, "products")
-        const myQuery = query(collectionProducts, orderBy("id"));
+        const myQuery = query(collectionProducts, orderBy("index"));
 
         let respuesta = await getDocs(myQuery);
 
         const products = respuesta.docs.map(docu => {
             return {
-                id: docu.id,
+                id: docu.index,
                 ...docu.data()
             }
         })
@@ -65,12 +65,13 @@ export async function ArrayProd() {
     }
 }
 
+
 export async function ArrayProdByCategory(categoryid) {
     const ProductsRef = collection(dataBase, "products")
-    const myQuery = query(ProductsRef, where("category", "==", categoryid));
+    const myQuery = query(ProductsRef, where("category", "==", categoryid) );
 
     const querySnapshot = await getDocs(myQuery);
-    const products = querySnapshot.forEach((docu) => {
+    const products = querySnapshot.docs.map((docu) => {
         return {
             id: docu.id,
             ...docu.data(),
@@ -111,7 +112,7 @@ export async function createBuyOrderFirestoreWithStock(buyOrderData) {
 
     batch.commit();
 
-    return docOrderRef;
+    return docOrderRef.id;
 }
 
 /* export async function exportItemsToFirestore(){
