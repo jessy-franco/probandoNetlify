@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button/Buttons";
 import { Link } from "react-router-dom";
 import "../Checkout/checkout.css"
 import dinoCheck from "../ImgHeader/dinoCheck.png"
@@ -13,7 +12,7 @@ function Checkout(){
             <h2 style={{padding: "2%"}}>Pronto llegara un mail a su casilla de correo con la informacion de su orden.</h2>
 
             <Link to = "/">
-            <Button>Volver a productos</Button>
+            <button>Volver a productos</button>
             </Link>
             </div>
         </section>
