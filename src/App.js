@@ -8,6 +8,7 @@ import CollapsibleExample from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/ItemsProdList/itemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Checkout from "./components/Checkout/Checkout" 
 import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from './store/CartContext';
@@ -43,7 +44,7 @@ function App() {
                   />
                   <Route path="/detalle/:idProducto" element={<ItemDetailContainer />} />
                   <Route path="/cart" element ={<CartView />}/>
-                  <Route path="/checkout/orderId" element ={<h1>Gracias por su compra</h1>}/>
+                  <Route path="/checkout" element ={<Checkout />}/>
                   <Route path="*" element={<div><h1 style={{ textAlign: "center" }}>Error 404: La ruta no existe</h1><img src={error} alt="error404" style={{ marginLeft: "30%", paddingBottom: "2%" }} /></div>} />
                 </Routes>
               </section>

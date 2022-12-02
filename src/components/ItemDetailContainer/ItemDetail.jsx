@@ -14,7 +14,7 @@ function ItemDetail({product}) {
     console.log(product)
     const { cart,  addToCart} = useContext(cartContext);
 
-    let itemInCart = cart.find((item) => product.id === item.id)
+    let itemInCart = cart.find((item) => product.index === item.index)
     let stock = product.stock;
     if(itemInCart) stock -= itemInCart.count;
 

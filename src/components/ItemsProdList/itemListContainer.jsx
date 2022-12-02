@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ItemsProd from "./ItemProdList"
 import { ArrayProdByCategory} from "../../firebase/firebase";
 import { ArrayProd } from "../../firebase/firebase";
-
 import { useParams } from "react-router-dom";
 
 
@@ -15,8 +14,9 @@ function ItemListContainer() {
             ArrayProdByCategory(categoryid).then((arrayItems) => {
                 setProductsList(arrayItems);
             })
-            
-        } else {
+        }
+        
+        else {
             ArrayProd().then((arrayItems) => {
                 setProductsList(arrayItems);
             });
