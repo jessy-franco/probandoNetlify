@@ -1,75 +1,4 @@
-<!-- # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
- -->
- 
 <h1 align="center">
   <br>
   <a href=""><img src="https://w7.pngwing.com/pngs/482/442/png-transparent-tyrannosaurus-rex-dinosaur-drawing-illustration-dinosaur-head-painted-hand-photography-thumbnail.png" alt="SucuRex" width="200"></a>
@@ -80,7 +9,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 <h4 align="center">SucuRex es una app e-commerce de venta por mayor y menor de plantas e insumos y otros productos de viverismo desarrolada con React <a href="https://es.reactjs.org/" target="_blank">React</a>.</h4>
 
-## How To Use
+## Desarrollo del e-commerce
+
+<p>Sucurex nace como un proyecto llevado a cabo en el contexto del curso de React de Coderhouse, de una necesidad de aprender, de renegar y de equivocarse en el mundo de la programacion. Cada dinosaurio en esta página fue profundamente pensado y meticulosamente elegido. Nace...como un sueño no solo de poder desarrollar una e-commerce sino como una forma de proyectar un emprendimiento muy muy a futuro, donde finalmente podamos convivir, plantas, dinosaurios y humanos</p>
+
+## Como se usa
 
 Para clonar esta aplicacion, tu necesitaras [Git](https://git-scm.com) y [Node.js](https://nodejs.org/en/download/) (que viene con  [npm](http://npmjs.com)) instalados en tu computadora. Desde su línea de comando:
 
@@ -105,15 +38,15 @@ $ npm install
 $ npm start
 ```
 
-> **Note**
+> **Nota**
 >Si está utilizando Linux Bash para Windows, [mirate esta guia](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) o utiliza `node` desde el símbolo del sistema.
 
 
-## Emailware
+## Contacto
 
 Si te gustó usar esta aplicación o te ha ayudado de alguna manera, me gustaría que me envíes un correo electrónico SucuRex@gmail.com sobre cualquier cosa que quieras decir sobre este software. ¡Realmente lo apreciaría!
 
-## Credits
+## Creditos
 
 Este software utiliza los siguientes paquetes de código abierto:
 
