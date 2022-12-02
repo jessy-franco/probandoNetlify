@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 .cardDetail{
-    margin-left: 25%;
+  text-align: center;
 }
 .card:hover .card-favicon{
     display: block;

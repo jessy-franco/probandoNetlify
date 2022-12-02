@@ -1,13 +1,13 @@
-/* .vistaCart{
+.vistaCart{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-} */
+} 
 .carritoVacio{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(192, 222, 188);
+    /* background-color: rgb(192, 222, 188); */
 }
